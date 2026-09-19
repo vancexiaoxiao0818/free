@@ -1,56 +1,5 @@
-# 南昆山民宿婚礼场地 · 3D 沙盘
+# free
 
-基于无人机航拍图配准的婚礼场地三维沙盘，单文件、离线可用（Three.js 内联，无外部依赖）。
+> 内容已迁移：婚礼场地 3D 沙盘现托管在 [wedding-quest-cn](https://github.com/vancexiaoxiao0818/wedding-quest-cn) 仓库的  目录（默认分支 codex/m0-local-prototype）。
 
-直接用浏览器打开 `venue-walkthrough-3d.html` 即可（与 `site-aerial-original.jpg` 放同一目录）。
-
-## 能看什么
-
-| 模块 | 说明 |
-| --- | --- |
-| 场地模型 | 按航拍逐栋还原的建筑（主民宿 / 附楼 / 路东建筑群）、泳池（L 形池 + 白架棚泳池）、道路、植被、车辆 |
-| 婚礼彩排 | 6 个环节（迎宾 → 准备 → 入场 → 仪式 → 午宴 → 送客）的动线预演，可点选调整活动点，记录保存到本机 |
-| 双人行走 | WASD / 方向键分别操控新郎新娘，第三人称跟随，可走进场地查看细节 |
-| 人流层 | 11 个走动 NPC：双方家长（父辈戴礼帽）、迎亲队伍 4 人、宾客、工作人员，沿路径往返行走 |
-| 午宴 10 桌 | 主楼东侧草坪 6 桌 + 附楼天台平台 4 桌；10 人圆桌（桌面 1.6m，含椅占地约 2.9m） |
-| 户外婚礼现场 | 露天舞台 + 花墙 + 乐队 + 红毯 + 24 座宾客椅（已按需求拆除篷房，保证俯瞰不被遮挡） |
-
-## 坐标体系
-
-航拍原图 `site-aerial-original.jpg` 为 1706×1279，比例 0.06 米/像素：
-
-```
-x = (px - 853) * 0.06
-z = (py - 639.5) * 0.06
-```
-
-沙盘里所有建筑/道具位置都由这套公式从航拍像素换算，因此可以和航拍图直接叠加对照。
-
-## 目录
-
-```
-venue-walkthrough-3d.html     主文件（六层结构：模型 → 彩排 → 风格 → 双人行走 → 道具 → 写实化 → 人流 → 午宴桌）
-site-aerial-original.jpg      航拍底图
-docs/                         预览图（俯视定稿 / 草坪近景 / 天台近景）
-tools/                        校验与出图脚本（Node + Python）
-```
-
-## 工具脚本用法
-
-需先安装 Chrome（默认路径 `C:/Program Files/Google/Chrome/Application/chrome.exe`）。
-
-```bash
-node tools/verify-final.cjs      # 复核 10 桌落位（3D 碰撞 + 出俯视图）
-node tools/verify-npc.cjs        # 校验人流层走动与报错
-node tools/shot-layouts.cjs      # 出布局对比图
-node tools/panorama.cjs          # 出 2560×1440 高清全景
-node tools/probe-free.cjs        # 射线扫描场地空地分布
-python tools/road-mask.py        # 航拍采样分类（路面/建筑/草坪/树荫）
-python tools/register-plan2.py   # 标注截图 → 航拍原图特征配准
-```
-
-## 已知限制
-
-- 几何为低多边形近似，非建筑级建模；逼真度上限受航拍单张正射影像约束（无多视角，无法做真正的摄影测量重建）。
-- 天台 4 桌（⑤–⑧）的承重需现场复核。
-- 摆桌点位以航拍判读为准，现场需用卷尺复核草坪实际可用尺寸。
+本仓库暂作保留，不再存放项目文件。
